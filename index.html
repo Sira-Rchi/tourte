@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เที่ยวเชิงประวัติศาสตร์ไทย - โดย นายธีรพล วงษ์รักษา</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0A5C36; /* สีเขียวมรกต */
+            --secondary-color: #D4AF37; /* สีทอง */
+            --accent-color: #2E8B57; /* สีเขียวซี */
+            --light-color: #F8F9FA; /* สีขาวเทาอ่อน */
+            --dark-color: #1A3C27; /* สีเขียวเข้ม */
+            --text-color: #333333;
+            --card-bg: #FFFFFF;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Sarabun', 'Kanit', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            color: white;
+            padding: 0.8rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(10, 92, 54, 0.15);
+            backdrop-filter: blur(10px);
+            border-bottom: 3px solid var(--secondary-color);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        
+        .logo i {
+            margin-right: 12px;
+            color: var(--secondary-color);
+            font-size: 2.2rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.8rem;
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 6px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+        
+        nav ul li a i {
+            font-size: 0.9rem;
+        }
+        
+        .active {
+            background-color: rgba(212, 175, 55, 0.2);
+            color: var(--secondary-color);
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: white;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(10, 92, 54, 0.85), rgba(26, 60, 39, 0.9)), 
+                        url('https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23D4AF37' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin: 0 auto 2rem;
+            max-width: 800px;
+            opacity: 0.95;
+        }
+        
+        .hero-author {
+            background: rgba(212, 175, 55, 0.2);
+            display: inline-block;
+            padding: 10px 25px;
+            border-radius: 50px;
+            border-left: 4px solid var(--secondary-color);
+        }
+        
+        /* Main Content */
+        .province-section {
+            padding: 5rem 0;
+            display: none;
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .province-section.active {
+            display: block;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3.5rem;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 20px;
+            font-size: 2.5rem;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            border-radius: 5px;
+        }
+        
+        /* Province Info */
+        .province-header {
+            background: linear-gradient(135deg, var(--card-bg) 0%, #f8f8f8 100%);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 4rem;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            border-left: 6px solid var(--secondary-color);
+            transition: var(--transition);
+        }
+        
+        .province-header:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .province-img {
+            width: 250px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .province-info h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        
+        /* Attractions Grid */
+        .attractions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 5rem;
+        }
+        
+        .attraction-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .attraction-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .attraction-img-container {
+            position: relative;
+            overflow: hidden;
+            height: 220px;
+        }
+        
+        .attraction-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .attraction-card:hover .attraction-img {
+            transform: scale(1.05);
+        }
+        
+        .attraction-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .attraction-content {
+            padding: 1.8rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .attraction-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+            font-size: 1.5rem;
+        }
+        
+        /* Services Grid */
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .service-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 5px solid var(--accent-color);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 12px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+            display: flex;
+            align-items: center;
+            font-size: 1.4rem;
+        }
+        
+        .service-card h3 i {
+            margin-right: 12px;
+            color: var(--secondary-color);
+            font-size: 1.3rem;
+        }
+        
+        .service-list {
+            list-style-type: none;
+        }
+        
+        .service-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px dashed #eee;
+            display: flex;
+            align-items: flex-start;
+            transition: var(--transition);
+        }
+        
+        .service-list li:hover {
+            padding-left: 5px;
+        }
+        
+        .service-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .service-list i {
+            color: var(--secondary-color);
+            margin-right: 12px;
+            width: 20px;
+            margin-top: 4px;
+            flex-shrink: 0;
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            background: linear-gradient(135deg, var(--card-bg) 0%, #f8f8f8 100%);
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            margin-top: 3rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.1);
+        }
+        
+        .btn-submit {
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .btn-submit:hover {
+            background: linear-gradient(to right, var(--dark-color), var(--primary-color));
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(10, 92, 54, 0.2);
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--dark-color), var(--primary-color));
+            color: white;
+            padding: 4rem 0 2rem;
+            margin-top: 5rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-section h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .contact-info p {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info i {
+            margin-right: 12px;
+            color: var(--secondary-color);
+            width: 20px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 1.5rem;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .social-icons a:hover {
+            background: var(--secondary-color);
+            color: var(--dark-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Province Navigation */
+        .province-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 4rem;
+        }
+        
+        .province-btn {
+            background: white;
+            border: 2px solid #eee;
+            color: var(--text-color);
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .province-btn:hover {
+            border-color: var(--accent-color);
+            color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .province-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 99;
+            box-shadow: 0 5px 15px rgba(10, 92, 54, 0.3);
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--dark-color);
+            transform: translateY(-5px);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .province-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .province-img {
+                width: 100%;
+                max-width: 500px;
+                height: 250px;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            nav ul {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+                flex-direction: column;
+                align-items: center;
+                padding: 1.5rem 0;
+                display: none;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                border-top: 2px solid var(--secondary-color);
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 0.8rem 0;
+                width: 90%;
+                text-align: center;
+            }
+            
+            nav ul li a {
+                justify-content: center;
+                padding: 12px;
+            }
+            
+            .hero {
+                padding: 4rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .province-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 3rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+            
+            .section-title {
+                font-size: 1.7rem;
+            }
+            
+            .attractions-grid, .services-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .province-nav {
+                gap: 10px;
+            }
+            
+            .province-btn {
+                padding: 8px 15px;
+                font-size: 0.85rem;
+            }
+            
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-landmark"></i>
+                <span>เที่ยวเชิงประวัติศาสตร์ไทย</span>
+            </div>
+            
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="#" class="nav-link active" data-target="home"><i class="fas fa-home"></i> หน้าแรก</a></li>
+                    <li><a href="#" class="nav-link" data-target="ratchaburi"><i class="fas fa-map-marker-alt"></i> ราชบุรี</a></li>
+                    <li><a href="#" class="nav-link" data-target="ayutthaya"><i class="fas fa-map-marker-alt"></i> อยุธยา</a></li>
+                    <li><a href="#" class="nav-link" data-target="sukhothai"><i class="fas fa-map-marker-alt"></i> สุโขทัย</a></li>
+                    <li><a href="#" class="nav-link" data-target="chiangmai"><i class="fas fa-map-marker-alt"></i> เชียงใหม่</a></li>
+                    <li><a href="#" class="nav-link" data-target="phetchaburi"><i class="fas fa-map-marker-alt"></i> เพชรบุรี</a></li>
+                    <li><a href="#" class="nav-link" data-target="contact"><i class="fas fa-address-card"></i> ติดต่อ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1>สัมผัสอารยธรรมไทย ผ่านสถานที่ท่องเที่ยวเชิงประวัติศาสตร์</h1>
+            <p>ค้นพบความงดงามของประวัติศาสตร์และวัฒนธรรมไทยผ่าน 5 จังหวัดสำคัญที่เต็มไปด้วยอัตลักษณ์ทางประวัติศาสตร์อันล้ำค่า</p>
+            <div class="hero-author">
+                <p>โดย <strong>นายธีรพล วงษ์รักษา</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Province Navigation -->
+    <div class="container province-nav" id="provinceNav">
+        <button class="province-btn active" data-target="ratchaburi"><i class="fas fa-map-pin"></i> ราชบุรี</button>
+        <button class="province-btn" data-target="ayutthaya"><i class="fas fa-map-pin"></i> อยุธยา</button>
+        <button class="province-btn" data-target="sukhothai"><i class="fas fa-map-pin"></i> สุโขทัย</button>
+        <button class="province-btn" data-target="chiangmai"><i class="fas fa-map-pin"></i> เชียงใหม่</button>
+        <button class="province-btn" data-target="phetchaburi"><i class="fas fa-map-pin"></i> เพชรบุรี</button>
+    </div>
+
+    <!-- Province Sections -->
+    <!-- จังหวัดราชบุรี -->
+    <section class="province-section container" id="ratchaburi">
+        <h1 class="section-title">จังหวัดราชบุรี</h1>
+        
+        <div class="province-header">
+            <img src="https://paitiewgunmai.com/wp-content/uploads/2025/05/%E0%B9%80%E0%B8%82%E0%B8%B2%E0%B8%AB%E0%B8%B4%E0%B8%99%E0%B8%87%E0%B8%B9_1500px-1024x768-1.jpg" alt="ราชบุรี" class="province-img">
+            <div class="province-info">
+                <h2>ราชบุรี เมืองแห่งวัฒนธรรมหลากหลาย</h2>
+                <p>จังหวัดราชบุรีเป็นจังหวัดที่มีความหลากหลายทางวัฒนธรรม ทั้งไทย จีน มอญ และไท-ยวน มีประวัติศาสตร์ยาวนานตั้งแต่สมัยทวารวดี จนถึงสมัยรัตนโกสินทร์</p>
+            </div>
+        </div>
+        
+        <h2 class="section-title" style="font-size: 1.8rem;">สถานที่ท่องเที่ยวเชิงประวัติศาสตร์</h2>
+        <div class="attractions-grid">
+            <div class="attraction-card">
+                <div class="attraction-img-container">
+                    <img src="https://static.wixstatic.com/media/a94972_19d01745346342afadbf9c57987ccc99~mv2.jpg/v1/fill/w_900,h_576,al_c,q_85,enc_avif,quality_auto/a94972_19d01745346342afadbf9c57987ccc99~mv2.jpg" alt="พระปรางค์สามยอด" class="attraction-img">
+                    <div class="attraction-badge">โบราณสถาน</div>
+                </div>
+                <div class="attraction-content">
+                    <h3>พระปรางค์สามยอด</h3>
+                    <p>โบราณสถานศิลปะลพบุรี อายุประมาณพุทธศตวรรษที่ 17-18 เป็นปราสาทอิฐ 3 หลัง เรียงกันในแนวเหนือ-ใต้ ตั้งอยู่ที่ตำบลหน้าเมือง อำเภอเมือง จังหวัดราชบุรี</p>
+                </div>
+            </div>
+            
+            <div class="attraction-card">
+                <div class="attraction-img-container">
+                    <img src="https://api.guideglai.com/sites/default/files/styles/wide_screen_image/public/field/images/%E0%B8%96%E0%B9%89%E0%B8%B3%E0%B9%80%E0%B8%82%E0%B8%B2%E0%B8%9A%E0%B8%B4%E0%B8%99%202.jpg?itok=k2xunDCl" alt="ถ้ำเขาบิน" class="attraction-img">
+                    <div class="attraction-badge">ธรรมชาติและวัฒนธรรม</div>
+                </div>
+                <div class="attraction-content">
+                    <h3>ถ้ำเขาบิน</h3>
+                    <p>ถ้ำขนาดใหญ่ที่มีพระพุทธรูปเก่าแก่และภาพเขียนสมัยโบราณ ภายในมีหินงอกหินย้อยสวยงาม ตั้งอยู่ที่อำเภอเมืองราชบุรี จังหวัดราชบุรี</p>
+                </div>
+            </div>
+            
+            <div class="attraction-card">
+                <div class="attraction-img-container">
+                    <img src="https://cms.dmpcdn.com/travel/2022/08/11/5a24b480-1926-11ed-a495-7fa230fcfef9_webp_original.jpg" alt="ถ้ำเขาหลวง" class="attraction-img">
+                    <div class="attraction-badge">ศาสนสถาน</div>
+                </div>
+                <div class="attraction-content">
+                    <h3>วัดมหาธาตุวรวิหาร</h3>
+                    <p>วัดเก่าแก่คู่เมืองราชบุรี สร้างสมัยอยุธยาตอนปลาย ภายในมีพระปรางค์ใหญ่และพระพุทธรูปสำคัญ เป็นพระอารามหลวงชั้นตรี ชนิดวรวิหาร</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="services-container">
+            <div class="service-card">
+                <h3><i class="fas fa-utensils"></i> ที่กินใกล้สถานที่ท่องเที่ยว</h3>
+                <ul class="service-list">
+                    <li><i class="fas fa-map-marker-alt"></i> <strong>ร้านอาหารบ้านไม้</strong> - อาหารไทยพื้นบ้านใกล้พระปรางค์สามยอด ราคาประมาณ 100-300 บาทต่อจาน</li>
+                    <li><i class="fas fa-map-marker-alt"></i> <strong>ก๋วยเตี๋ยวเรือโบราณราชบุรี</strong> - ก๋วยเตี๋ยวเรือรสชาติเด็ดใกล้ถ้ำเขาบิน เปิดบริการ 08:00-16:00 น.</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <h3><i class="fas fa-shopping-bag"></i> ที่ช้อปปิ้งใกล้สถานที่ท่องเที่ยว</h3>
+                <ul class="service-list">
+                    <li><i class="fas fa-map-marker-alt"></i> <strong>ตลาดเก่าราชบุรี</strong> - ของฝากพื้นเมืองเช่น หัวหอมแดง กระเทียม ผลิตภัณฑ์ชุมชน ใกล้วัดมหาธาตุ</li>
+                    <li><i class="fas fa-map-marker-alt"></i> <strong>ศูนย์โอทอปราชบุรี</strong> - สินค้าท้องถิ่น งานหัตถกรรม ผ้าไหม ผ้าฝ้าย ใกล้พระปรางค์สามยอด</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <h3><i class="fas fa-hotel"></i> ที่พักใกล้สถานที่ท่องเที่ยว</h3>
+                <ul class="service-list">
+                    <li><i class="fas fa-map-marker-alt"></i> <strong>โรงแรมราชบุรี รอยัล</strong> - ใกล้สถานที่ท่องเที่ยวหลายแห่ง ราคา 1,200-2,500 บาทต่อคืน</li>
+                    <li><i class="fas fa-map-marker-alt"></i> <strong>รีสอร์ทเขาบิน</strong> - บรรยากาศธรรมชาติใกล้ถ้ำเขาบิน ราคา 800-1,500 บาทต่อคืน</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- จังหวัดพระนครศรีอยุธยา -->
+    <section class="province-section container" id="ayutthaya">
+        <h1 class="section-title">จังหวัดพระนครศรีอยุธยา</h1>
+        
+        <div class="province-header">
+            <img src="https://img.kapook.com/u/natthida/travel/60713170.jpg" alt="อยุธยา" class="province-img">
+            <div class="province-info">
+                <h2>กรุงเก่าแห่งประวัติศาสตร์ไทย</h2>
+                <p>เมืองหลวงเก่าของไทยที่มีอายุมากกว่า 400 ปี เป็นมรดกโลกทางวัฒนธรรมจาก UNESCO มีโบราณสถานและวัดเก่าแก่มากมาย</p>
+            </div>
+        </div>
+        
+        <h2 class="section-title" style="font-size: 1.8rem;">สถานที่ท่องเที่ยวเชิงประวัติศาสตร์</h2>
+        <div class="attractions-grid">
+            <div class="attraction-card">
+                <div class="attraction-img-container">
+                    <img src="https://cbtthailand.dasta.or.th/upload-file-api/Resources/RelateAttraction/Images/RAT140093/1.jpeg" alt="วัดพระศรีสรรเพชญ์" class="attraction-img">
+                    <div class="attraction-badge">มรดกโลก</div>
+                </div>
+                <div class="attraction-content">
+                    <h3>วัดพระศรีสรรเพชญ์</h3>
+                    <p>วัดสำคัญในเขตพระราชวังหลวง สร้างในสมัยสมเด็จพระบรมไตรโลกนาถ เป็นวัดที่ใช้ประกอบพระราชพิธีสำคัญ และเป็นที่ประดิษฐานพระศรีสรรเพชญดาญาณ</p>
+                </div>
+            </div>
+            
+            <div class="attraction-card">
+                <div class="attraction-img-container">
+                    <img src="https://f.ptcdn.info/427/019/000/1401158755-WatMahatha-o.jpg" alt="วัดมหาธาตุ" class="attraction-img">
+                    <div class="attraction-badge">มรดกโลก</div>
+                </div>
+                <div class="attraction-content">
+                    <h3>วัดมหาธาตุ</h3>
+                    <p>วัดเก่าแก่คู่กรุงศรีอยุธยา สร้างสมัยพระบรมราชาธิราชที่ 1 ภายในมีเศียรพระพุทธรูปในรากไม้ที่โด่งดัง ตั้งอยู่กลางเกาะเมืองอยุธยา</p>
+                </div>
+            </div>
+            
+            <div class="attraction-card">
+                <div class="attraction-img-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Wat_Chaiwatthanaram_by_drone.jpg/1200px-Wat_Chaiwatthanaram_by_drone.jpg" alt="วัดไชยวัฒนาราม" class="attraction-img">
+                    <div class="attraction-badge">มรดกโลก</div>
+                </div>
+                <div class="attraction-content">
+                    <h3>วัดไชยวัฒนาราม</h3>
+                    <p>วัดที่สร้างในสมัยพระเจ้าปราสาททอง มีปรางค์ประธานและปรางค์รายที่งดงาม ตั้งอยู่ริมแม่น้ำเจ้าพระยา สร้างเพื่ออุทิศพระราชกุศลแด่พระมารดา</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="services-container">
+            <div class="service-card">
+                <h3><i class="fas fa-utensils"></i> ที่กินใกล้สถานที่ท่องเที่ยว</h3>
+                <ul class="service-list">
+                    <li><i class="fas fa-map-marker-alt"></i> <strong>ร้านอาหารริมน้ำเจ้าพระยา</strong> - วิวแม่น้ำใกล้วัดไชยวัฒนาราม อาหารไทยและอาหารทะเล</li>
+                    <li><i class="fas fa-map-marker-alt"></i> <strong>ก๋วยเตี๋ยวเรืออยุธยา</strong> - ก๋วยเตี๋ยวเรือรสชาติดั้งเดิมใกล้วัดมหาธาตุ ราคา 50-80 บาท</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <h3><i class="fas fa-shopping-bag"></i> ที่ช้อปปิ้งใกล้สถานที่ท่องเที่ยว</h3>
+                <ul class="service-list">
+                    <li><i class="fas fa-map-marker-alt"></i> <strong>ตลาดน้ำอโยธยา</strong> - ตลาดน้ำย้อนยุคใกล้วัดพระศรีสรรเพชญ์ ของฝากและอาหารพื้นบ้าน</li>
+                    <li><i class="fas fa-map-marker-alt"></i> <strong>ศูนย์ศิลปาชีพอยุธยา</strong> - สินค้าหัตถกรรม งานฝีมือ ใกล้วัดมหาธาตุ</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <h3><i class="fas fa-hotel"></i> ที่พักใกล้สถานที่ท่องเที่ยว</h3>
+                <ul class="service-list">
+                    <li><i class="fas fa-map-marker-alt"></i> <strong>โฮมสเตย์ย่านเก่าอยุธยา</strong> - บรรยากาศโบราณใกล้วัดมหาธาตุ ราคา 500-1,200 บาท</li>
+                    <li><i class="fas fa-map-marker-alt"></i> <strong>โรงแรมอยุธยา รีสอร์ท</strong> - ที่พักสบายใกล้วัดไชยวัฒนาราม ราคา 1,500-3,000 บาท</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- จังหวัดสุโขทัย -->
+    <section class="province-section container" id="sukhothai">
+        <h1 class="section-title">จังหวัดสุโขทัย</h1>
+        
+        <div class="province-header">
+            <img src="https://www.scb.co.th/getmedia/dd1618bd-cb9d-4c27-8aca-24a0aee3f7fc/sukhothai-historical-park.jpg" alt="สุโขทัย" class="province-img">
+            <div class="province-info">
+                <h2>รุ่งอรุณแห่งความสุข อาณาจักรไทยแรกเริ่ม</h2>
+                <p>เมืองมรดกโลกที่เคยเป็นราชธานีแห่งแรกของไทย มีอุทยานประวัติศาสตร์สุโขทัยที่สมบูรณ์ที่สุดแห่งหนึ่ง</p>
+            </div>
+        </div>
+        
+        <h2 class="section-title" style="font-size: 1.8rem;">สถานที่ท่องเที่ยวเชิงประวัติศาสตร์</h2>
+        <div class="attractions-grid">
+            <div class="attraction-card">
+                <div class="attraction-img-container">
+                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSxyVbuKwB_gm3JI-EJ9qw0SklX7kJZCRcumOxBkbBvBjXeJ5R5WVNSM0ptWidhgoItTCkptUEhLpQITNPW6wZrkgAxnmOpdZaYZlOtCroQf5-ll2jvYlIDqZlRgvsXdhaEdORU6=s680-w680-h510-rw" alt="ทุ่งทะเลหลวง" class="attraction-img">
+                    <div class="attraction-badge">มรดกโลก</div>
+                </div>
+                <div class="attraction-content">
+                    <h3>วัดมหาธาตุ</h3>
+                    <p>วัดสำคัญที่สุดในอุทยานประวัติศาสตร์สุโขทัย มีเจดีย์ประธานทรงพุ่มข้าวบิณฑ์แบบสุโขทัยแท้ สร้างในสมัยพ่อขุนศรีอินทราทิตย์</p>
+                </div>
+            </div>
+            
+            <div class="attraction-card">
+                <div class="attraction-img-container">
+                    <img src="https://img.kapook.com/u/2016/sutasinee/03/Travel/06/b1.jpg" alt="วัดศรีชุม" class="attraction-img">
+                    <div class="attraction-badge">โบราณสถาน</div>
+                </div>
+                <div class="attraction-content">
+                    <h3>วัดศรีชุม</h3>
+                    <p>วัดที่มีพระพุทธรูปปางมารวิชัยขนาดใหญ่ชื่อ "พระอจนะ" อยู่ในวิหารที่ไม่มีหน้าต่าง สูง 11.30 เมตร วัดนี้สร้างในสมัยพระมหาธรรมราชาที่ 1</p>
+                </div>
+            </div>
+            
+            <div class="attraction-card">
+                <div class="attraction-img-container">
+                    <img src="https://cbtthailand.dasta.or.th/upload-file-api/Resources/RelateAttraction/Images/RAT640153/3.jpeg" alt="วัดสระศรี" class="attraction-img">
+                    <div class="attraction-badge">โบราณสถาน</div>
+                </div>
+                <div class="attraction-content">
+                    <h3>วัดสระศรี</h3>
+                    <p>วัดกลางน้ำบนเกาะในตระพังทอง ด้านหน้าวัดมีพระพุทธรูปปูนปั้นปางลีลาที่สวยงาม เป็นวัดที่สำคัญในอุทยานประวัติศาสตร์สุโขทัย</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="services-container">
+            <div class="service-card">
+                <h3><i class="fas fa-utensils"></i> ที่กินใกล้สถานที่ท่องเที่ยว</h3>
+                <ul class="service-list">
+                    <li><i class="fas fa-map-marker-alt"></i> <strong>ร้านอาหารสุโขทัยยิ้ม</strong> - อาหารพื้นบ้านใกล้วัดมหาธาตุ มีขนมจีนสุโขทัยชื่อดัง</li>
+                    <li><i class="fas fa-map-marker-alt"></i> <strong>ก๋วยเตี๋ยวสุโขทัยโบราณ</strong> - ก๋วยเตี๋ยวสูตรดั้งเดิมใกล้วัดศรีชุม ราคา 40-60 บาท</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <h3><i class="fas fa-shopping-bag"></i> ที่ช้อปปิ้งใกล้สถานที่ท่องเที่ยว</h3>
+                <ul class="service-list">
+                    <li><i class="fas fa-map-marker-alt"></i> <strong>ตลาดธานี</strong> - ของฝากพื้นเมืองเช่น ผลไม้แห้ง อาหารแปรรูป ใกล้วัดสระศรี</li>
+                    <li><i class="fas fa-map-marker-alt"></i> <strong>ศูนย์ศิลปหัตถกรรมสุโขทัย</strong> - เครื่องปั้นดินเผาสุโขทัย งานหัตถกรรม ใกล้วัดมหาธาตุ</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <h3><i class="fas fa-hotel"></i> ที่พักใกล้สถานที่ท่องเที่ยว</h3>
+                <ul class="service-list">
+                    <li><i class="fas fa-map-marker-alt"></i> <strong>รีสอร์ทในอุทยานประวัติศาสตร์</strong> - บรรยากาศโบราณสถานใกล้วัดมหาธาตุ ราคา 800-2,000 บาท</li>
+                    <li><i class="fas fa-map-marker-alt"></i> <strong>โฮมสเตย์ศรีสัชนาลัย</strong> - ที่พักแบบพื้นบ้านใกล้วัดศรีชุม ราคา 400-800 บาท</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- จังหวัดเชียงใหม่ -->
+    <section class="province-section container" id="chiangmai">
+        <h1 class="section-title">จังหวัดเชียงใหม่</h1>
+        
+        <div class="province-header">
+            <img src="https://www.charnveeresortkhaoyai.com/wp-content/uploads/2023/12/Rancho-Dec-6-%E0%B8%A1%E0%B8%A3%E0%B8%94%E0%B8%81%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%A7%E0%B8%B1%E0%B8%92%E0%B8%99%E0%B8%98%E0%B8%A3%E0%B8%A3%E0%B8%A1-04-scaled.jpg" alt="เชียงใหม่" class="province-img">
+            <div class="province-info">
+                <h2>นครประวัติศาสตร์ล้านนา วัฒนธรรมอันงดงาม</h2>
+                <p>เมืองเก่าที่มีประวัติศาสตร์ยาวนานกว่า 700 ปี เป็นศูนย์กลางวัฒนธรรมล้านนา มีวัดวาอารามและประเพณีอันงดงาม</p>
+            </div>
+        </div>
+        
+        <h2 class="section-title" style="font-size: 1.8rem;">สถานที่ท่องเที่ยวเชิงประวัติศาสตร์</h2>
+        <div class="attractions-grid">
+            <div class="attraction-card">
+                <div class="attraction-img-container">
+                    <img src="https://travelxpress.co.th/wp-content/uploads/doisuthep-jpg.webp" alt="วัดพระธาตุดอยสุเทพ" class="attraction-img">
+                    <div class="attraction-badge">ศาสนสถานสำคัญ</div>
+                </div>
+                <div class="attraction-content">
+                    <h3>วัดพระธาตุดอยสุเทพ</h3>
+                    <p>วัดคู่บ้านคู่เมืองเชียงใหม่ สร้างขึ้นในปี พ.ศ. 1929 ตั้งอยู่บนดอยสุเทพสูง 1,053 เมตรจากระดับน้ำทะเล บรรจุพระบรมสารีริกธาตุ</p>
+                </div>
+            </div>
+            
+            <div class="attraction-card">
+                <div class="attraction-img-container">
+                    <img src="https://image-tc.galaxy.tf/wijpeg-wrdfdp19l32u4vc3wwergjji/wat-phra-sigh.jpg" alt="วัดพระสิงห์" class="attraction-img">
+                    <div class="attraction-badge">ศาสนสถานสำคัญ</div>
+                </div>
+                <div class="attraction-content">
+                    <h3>วัดพระสิงห์</h3>
+                    <p>วัดสำคัญในตัวเมืองเชียงใหม่ สร้างในปี พ.ศ. 1888 เป็นที่ประดิษฐานพระพุทธสิหิงค์ พระพุทธรูปศักดิ์สิทธิ์คู่บ้านคู่เมืองเชียงใหม่</p>
+                </div>
+            </div>
+            
+            <div class="attraction-card">
+                <div class="attraction-img-container">
+                    <img src="https://cbtthailand.dasta.or.th/upload-file-api/Resources/RelateAttraction/Images/RAT500500/1.jpeg" alt="วัดเจดีย์หลวง" class="attraction-img">
+                    <div class="attraction-badge">โบราณสถาน</div>
+                </div>
+                <div class="attraction-content">
+                    <h3>วัดเจดีย์หลวง</h3>
+                    <p>วัดที่มีเจดีย์ใหญ่ที่สุดในล้านนา สร้างในรัชสมัยพญาแสนเมืองมา เมื่อปี พ.ศ. 1934 เจดีย์เดิมสูง 82 เมตร ฐานกว้าง 54 เมตร</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="services-container">
+            <div class="service-card">
+                <h3><i class="fas fa-utensils"></i> ที่กินใกล้สถานที่ท่องเที่ยว</h3>
+                <ul class="service-list">
+                    <li><i class="fas fa-map-marker-alt"></i> <strong>ร้านอาหารล้านนาบริเวณวัดพระสิงห์</strong> - อาหารเหนือแท้ เช่น แกงฮังเล น้ำพริกอ่อง</li>
+                    <li><i class="fas fa-map-marker-alt"></i> <strong>ก๋วยเตี๋ยวคะน้านักวัดเจดีย์หลวง</strong> - ก๋วยเตี๋ยวรสชาติเด็ด เปิด 07:00-15:00 น.</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <h3><i class="fas fa-shopping-bag"></i> ที่ช้อปปิ้งใกล้สถานที่ท่องเที่ยว</h3>
+                <ul class="service-list">
+                    <li><i class="fas fa-map-marker-alt"></i> <strong>ตลาดวโรรส</strong> - ตลาดสดเก่าแก่ใกล้วัดพระสิงห์ ผลไม้สด อาหารพื้นเมือง</li>
+                    <li><i class="fas fa-map-marker-alt"></i> <strong>ถนนวัวลาย</strong> - ร้านหัตถกรรมพื้นบ้าน งานฝีมือ ใกล้วัดเจดีย์หลวง</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <h3><i class="fas fa-hotel"></i> ที่พักใกล้สถานที่ท่องเที่ยว</h3>
+                <ul class="service-list">
+                    <li><i class="fas fa-map-marker-alt"></i> <strong>โรงแรมในเมืองเก่าเชียงใหม่</strong> - บรรยากาศเมืองประวัติศาสตร์ ราคา 1,000-3,000 บาท</li>
+                    <li><i class="fas fa-map-marker-alt"></i> <strong>โฮมสเตย์บริเวณดอยสุเทพ</strong> - ใกล้ธรรมชาติและวัดพระธาตุดอยสุเทพ ราคา 600-1,500 บาท</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- จังหวัดเพชรบุรี -->
+    <section class="province-section container" id="phetchaburi">
+        <h1 class="section-title">จังหวัดเพชรบุรี</h1>
+        
+        <div class="province-header">
+            <img src="https://travel.mthai.com/app/uploads/2018/03/sti001-09-m.jpg" alt="เพชรบุรี" class="province-img">
+            <div class="province-info">
+                <h2>เมืองแห่งศิลปะและประวัติศาสตร์ แผ่นดินแห่งวังเก่า</h2>
+                <p>จังหวัดที่มีประวัติศาสตร์ยาวนานตั้งแต่สมัยทวารวดี มีพระราชวังและวัดเก่าแก่มากมาย รวมถึงศิลปะการก่อสร้างที่ผสมผสาน</p>
+            </div>
+        </div>
+        
+        <h2 class="section-title" style="font-size: 1.8rem;">สถานที่ท่องเที่ยวเชิงประวัติศาสตร์</h2>
+        <div class="attractions-grid">
+            <div class="attraction-card">
+                <div class="attraction-img-container">
+                    <img src="https://phetchaburi.prd.go.th/th/file/get/file/20240513d88bac7c1af589282c5d408b3e3214db082022.jpg" alt="พระนครคีรี" class="attraction-img">
+                    <div class="attraction-badge">พระราชวัง</div>
+                </div>
+                <div class="attraction-content">
+                    <h3>พระนครคีรี (เขาวัง)</h3>
+                    <p>พระราชวังบนเขาสูง สร้างในสมัยรัชกาลที่ 4 ประกอบด้วยวัด พระที่นั่ง และอาคารต่างๆ สไตล์ตะวันตกผสมไทย ตั้งอยู่บนเขาสูง 92 เมตร</p>
+                </div>
+            </div>
+            
+            <div class="attraction-card">
+                <div class="attraction-img-container">
+                    <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSx6ogYv-6kzInUirnTZj8qQzFzFSWKvRhbfqoVA5h50vQAKUr9NFBdD5gCuZFLxjFeG0P0qpthY_H4fgLhZxlfivVXGf7PvDfvxTWTty7iRN-bjKQ1TdY3u1P9zxOKI4IRY8UJD_A=w270-h312-n-k-no" alt="Kaeng Krachan Dam" class="attraction-img">
+                    <div class="attraction-badge">ศาสนสถาน</div>
+                </div>
+                <div class="attraction-content">
+                    <h3>วัดมหาธาตุวรวิหาร</h3>
+                    <p>วัดเก่าแก่คู่เมืองเพชรบุรี สร้างสมัยอยุธยา มีพระปรางค์ 5 ยอด และพระพุทธรูปสำคัญ วัดนี้เป็นพระอารามหลวงชั้นตรี ชนิดวรวิหาร</p>
+                </div>
+            </div>
+            
+            <div class="attraction-card">
+                <div class="attraction-img-container">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdc14cUweUy_f3S_Miw10cpfN5YpdkR_MknA&s" alt="พระรามราชนิเวศน์" class="attraction-img">
+                    <div class="attraction-badge">พระราชวัง</div>
+                </div>
+                <div class="attraction-content">
+                    <h3>พระรามราชนิเวศน์ (วังบ้านปืน)</h3>
+                    <p>พระราชวังฤดูร้อนสมัยรัชกาลที่ 5 สร้างด้วยสถาปัตยกรรมแบบยุโรป ตั้งอยู่ริมแม่น้ำเพชรบุรี ออกแบบโดยสถาปนิกชาวเยอรมัน</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="services-container">
+            <div class="service-card">
+                <h3><i class="fas fa-utensils"></i> ที่กินใกล้สถานที่ท่องเที่ยว</h3>
+                <ul class="service-list">
+                    <li><i class="fas fa-map-marker-alt"></i> <strong>ร้านอาหารวังเพชร</strong> - อาหารไทยใกล้วัดมหาธาตุ มีขนมหวานเพชรบุรีชื่อดัง</li>
+                    <li><i class="fas fa-map-marker-alt"></i> <strong>ก๋วยเตี๋ยวหมูสะเต๊ะเขาวัง</strong> - อาหารพื้นเมืองใกล้พระนครคีรี ราคา 40-70 บาท</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <h3><i class="fas fa-shopping-bag"></i> ที่ช้อปปิ้งใกล้สถานที่ท่องเที่ยว</h3>
+                <ul class="service-list">
+                    <li><i class="fas fa-map-marker-alt"></i> <strong>ตลาดเก่าเพชรบุรี</strong> - ของฝากพื้นเมืองเช่น ขนมหวานเพชรบุรี ปลาเค็ม ใกล้วัดมหาธาตุ</li>
+                    <li><i class="fas fa-map-marker-alt"></i> <strong>ศูนย์โอทอปเพชรบุรี</strong> - สินค้าท้องถิ่น ผลิตภัณฑ์ชุมชน ใกล้พระรามราชนิเวศน์</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <h3><i class="fas fa-hotel"></i> ที่พักใกล้สถานที่ท่องเที่ยว</h3>
+                <ul class="service-list">
+                    <li><i class="fas fa-map-marker-alt"></i> <strong>โรงแรมใกล้เขาวัง</strong> - สะดวกเยี่ยมชมพระนครคีรี ราคา 800-2,000 บาท</li>
+                    <li><i class="fas fa-map-marker-alt"></i> <strong>รีสอร์ทริมแม่น้ำเพชร</strong> - บรรยากาศดีใกล้พระรามราชนิเวศน์ ราคา 1,200-3,000 บาท</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="province-section container" id="contact">
+        <h1 class="section-title">ติดต่อผู้จัดทำ</h1>
+        
+        <div class="province-header">
+            <img src="./img/123.jpg" alt="ผู้จัดทำ" class="province-img">
+            <div class="province-info">
+                <h2>นายธีรพล วงษ์รักษา</h2>
+                <p>ผู้รวบรวมข้อมูลและพัฒนาเว็บไซต์แนะนำสถานที่ท่องเที่ยวเชิงประวัติศาสตร์ในประเทศไทย</p>
+                <p>มีเป้าหมายเพื่อส่งเสริมการท่องเที่ยวเชิงประวัติศาสตร์และวัฒนธรรมของไทยให้เป็นที่รู้จักมากขึ้น</p>
+            </div>
+        </div>
+        
+        <div class="services-container">
+            <div class="service-card">
+                <h3><i class="fas fa-info-circle"></i> ข้อมูลการติดต่อ</h3>
+                <ul class="service-list">
+                    <li><i class="fas fa-user"></i> <strong>ชื่อ:</strong> นายธีรพล วงษ์รักษา</li>
+                    <li><i class="fas fa-envelope"></i> <strong>อีเมล:</strong> songsak.pu@example.com</li>
+                    <li><i class="fas fa-phone"></i> <strong>โทรศัพท์:</strong> 081-234-5678</li>
+                    <li><i class="fas fa-map-marker-alt"></i> <strong>ที่อยู่:</strong> กรุงเทพมหานคร, ประเทศไทย</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <h3><i class="fas fa-lightbulb"></i> เกี่ยวกับโครงการ</h3>
+                <ul class="service-list">
+                    <li><i class="fas fa-calendar-alt"></i> <strong>ปีที่พัฒนา:</strong> 2568</li>
+                    <li><i class="fas fa-university"></i> <strong>วัตถุประสงค์:</strong> เพื่อการศึกษาด้านการท่องเที่ยวเชิงประวัติศาสตร์</li>
+                    <li><i class="fas fa-globe-asia"></i> <strong>ขอบเขต:</strong> 5 จังหวัดในประเทศไทย</li>
+                    <li><i class="fas fa-tasks"></i> <strong>จำนวนสถานที่:</strong> 15 สถานที่ท่องเที่ยวเชิงประวัติศาสตร์</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <h3><i class="fas fa-share-alt"></i> ช่องทางการติดตาม</h3>
+                <ul class="service-list">
+                    <li><i class="fab fa-facebook"></i> <strong>Facebook:</strong> เที่ยวเชิงประวัติศาสตร์ไทย</li>
+                    <li><i class="fab fa-youtube"></i> <strong>YouTube:</strong> Thai Historical Travel</li>
+                    <li><i class="fab fa-instagram"></i> <strong>Instagram:</strong> @thai_historical_travel</li>
+                </ul>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-line"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contact-form">
+            <h3><i class="fas fa-comment-alt"></i> แสดงความคิดเห็นหรือสอบถามข้อมูล</h3>
+            <form id="contactForm" style="margin-top: 1.5rem;">
+                <div class="form-group">
+                    <label for="name">ชื่อ</label>
+                    <input type="text" id="name" class="form-control" placeholder="กรุณากรอกชื่อของคุณ">
+                </div>
+                <div class="form-group">
+                    <label for="email">อีเมล</label>
+                    <input type="email" id="email" class="form-control" placeholder="กรุณากรอกอีเมลของคุณ">
+                </div>
+                <div class="form-group">
+                    <label for="message">ข้อความ</label>
+                    <textarea id="message" rows="5" class="form-control" placeholder="กรุณากรอกข้อความที่ต้องการส่ง"></textarea>
+                </div>
+                <button type="submit" class="btn-submit">
+                    <i class="fas fa-paper-plane"></i> ส่งข้อความ
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>เที่ยวเชิงประวัติศาสตร์ไทย</h3>
+                    <p>เว็บไซต์แนะนำสถานที่ท่องเที่ยวเชิงประวัติศาสตร์ในประเทศไทย โดยรวบรวมข้อมูลจาก 5 จังหวัดสำคัญ</p>
+                    <p>เพื่อส่งเสริมการท่องเที่ยวเชิงวัฒนธรรมและประวัติศาสตร์ของไทย</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>จังหวัดในเว็บไซต์</h3>
+                    <ul class="service-list">
+                        <li><i class="fas fa-map-marker-alt"></i> จังหวัดราชบุรี</li>
+                        <li><i class="fas fa-map-marker-alt"></i> จังหวัดพระนครศรีอยุธยา</li>
+                        <li><i class="fas fa-map-marker-alt"></i> จังหวัดสุโขทัย</li>
+                        <li><i class="fas fa-map-marker-alt"></i> จังหวัดเชียงใหม่</li>
+                        <li><i class="fas fa-map-marker-alt"></i> จังหวัดเพชรบุรี</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>ติดต่อผู้จัดทำ</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-user"></i> นายธีรพล วงษ์รักษา</p>
+                        <p><i class="fas fa-envelope"></i> songsak.pu@example.com</p>
+                        <p><i class="fas fa-phone"></i> 081-234-5678</p>
+                        <p><i class="fas fa-map-marker-alt"></i> กรุงเทพมหานคร, ประเทศไทย</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2568 เที่ยวเชิงประวัติศาสตร์ไทย - โดย นายธีรพล วงษ์รักษา. สงวนลิขสิทธิ์.</p>
+                <p>เว็บไซต์นี้สร้างขึ้นเพื่อการศึกษาเท่านั้น</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const provinceBtns = document.querySelectorAll('.province-btn');
+            const provinceSections = document.querySelectorAll('.province-section');
+            const heroSection = document.getElementById('home');
+            const navMenu = document.getElementById('navMenu');
+            const menuToggle = document.getElementById('menuToggle');
+            const backToTop = document.getElementById('backToTop');
+            const provinceNav = document.getElementById('provinceNav');
+            
+            // Function to show selected section
+            function showSection(sectionId) {
+                // Hide all province sections
+                provinceSections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                // Hide hero section if not home
+                if (sectionId !== 'home') {
+                    heroSection.style.display = 'none';
+                    provinceNav.style.display = 'flex';
+                } else {
+                    heroSection.style.display = 'block';
+                    provinceNav.style.display = 'flex';
+                }
+                
+                // Show selected section
+                if (sectionId !== 'home') {
+                    const targetSection = document.getElementById(sectionId);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                    }
+                }
+                
+                // Update active nav link
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('data-target') === sectionId) {
+                        link.classList.add('active');
+                    }
+                });
+                
+                // Update active province button
+                provinceBtns.forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.getAttribute('data-target') === sectionId) {
+                        btn.classList.add('active');
+                    }
+                });
+                
+                // Close mobile menu if open
+                if (window.innerWidth <= 768) {
+                    navMenu.classList.remove('active');
+                }
+            }
+            
+            // Add click event to nav links
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetSection = this.getAttribute('data-target');
+                    showSection(targetSection);
+                    
+                    // Scroll to top of page
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            });
+            
+            // Add click event to province buttons
+            provinceBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const targetSection = this.getAttribute('data-target');
+                    showSection(targetSection);
+                    
+                    // Scroll to top of page
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            });
+            
+            // Menu toggle for mobile
+            menuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+            
+            // Show home section by default
+            showSection('home');
+            
+            // Contact form submission
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('ขอบคุณสำหรับข้อความ! เราจะติดต่อกลับไปหาคุณเร็วๆนี้');
+                    contactForm.reset();
+                });
+            }
+            
+            // Close menu when clicking outside on mobile
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    if (!navMenu.contains(e.target) && !menuToggle.contains(e.target) && navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                    }
+                }
+            });
+            
+            // Back to top functionality
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    backToTop.classList.add('show');
+                } else {
+                    backToTop.classList.remove('show');
+                }
+            });
+            
+            backToTop.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            
+            // Add animation to cards on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all cards for animation
+            document.querySelectorAll('.attraction-card, .service-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
